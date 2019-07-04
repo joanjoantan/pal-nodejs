@@ -21,7 +21,9 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "test": "gulp clean && gulp build && gulp test && gulp clean:spec"
+    "test": "gulp clean && gulp build && gulp test && gulp clean:spec",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -32,7 +34,8 @@
   },
   "dependencies": {
     "aurelia-pal": "^1.1.0",
-    "jsdom": "~11.5.1"
+    "jsdom": "~11.5.1",
+    "snyk": "^1.190.0"
   },
   "devDependencies": {
     "@types/jasmine": "^2.2.34",
@@ -76,5 +79,6 @@
     "documentation": {
       "articles": []
     }
-  }
+  },
+  "snyk": true
 }
